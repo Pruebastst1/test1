@@ -1,5 +1,5 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,9 @@ session_start();
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-  <?php include_once "lib_title.php" ?>
+  <?php
+  include_once "lib_title.php";
+  ?>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!-- Favicons -->
@@ -29,17 +31,20 @@ session_start();
   <link rel="stylesheet" type="text/css" href="assets/css/toastify.min.css">
 <!-- JavaScript de Toastify -->
 <script type="text/javascript" src="assets/js/toastify-js"></script>
+    <style>
+        .right-align {
+            text-align: right;
+        }
+    </style>
 </head>
 
 <body>
 
     <?php
 
-    include ("conex.php"); 
+    include_once "conex.php"; 
 
     $link=conectarse();
-    //mysqli_query("SET NAMES 'utf8'");
-    
     $ses_usu_id     = $_SESSION['ses_id'];
     $ses_usu_nombre = $_SESSION['ses_nombre'];
     $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
@@ -80,7 +85,8 @@ session_start();
 
             <div class="card-body">
               <h5 class="card-title">Canales</h5>
-              <p align="right"><a href="man_can_ag.php"><button type="button" title="Agregar Nuevo" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar</button></a> </p>
+              <p class="right-align"><a href="man_can_ag.php" class="btn btn-primary" title="Agregar Nuevo"><i class="bi bi-plus-circle"></i> Agregar</a></p>
+
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -118,17 +124,11 @@ session_start();
                   
                 </tbody>
               </table>
-              <!-- End Table with stripped rows -->
-
             </div>
           </div>
-
         </div>
       </div>
-    </section>
-
-  </main><!-- End #main -->
-
+    </section></main>
   <!-- ======= Footer ======= -->
   <?php include_once "lib_footer.php"; ?>
   <!-- End Footer -->
@@ -146,17 +146,17 @@ session_start();
   <script src="assets/vendor/echarts/echarts.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 <script>
 $(document).ready(function() {
-    $(".delete-div").click(function() {
-        var divId = $(this).data('div-id');
+    $(".delete-canal").click(function() {
+        var canalId = $(this).data('canal-id');
+        var f_op = $(this).data('f_op');
 
         $.ajax({
-            url: 'man_div_p.php',
+            url: 'man_can_p.php',
             type: 'POST',
-            data: { id_div: divId, f_op: 'b' },
+            data: { id_can: canalId, f_op: f_op },
             success: function(response) {
                 var data = JSON.parse(response);
                 if (data.error) {
@@ -172,27 +172,24 @@ $(document).ready(function() {
         });
     });
 
-    $(".edit-div").click(function() {
-        var divId = $(this).data('div-id');
-        var originalName = $("#div_nombre_" + divId).text().trim();
-        var originalCode = $("#div_codigo_" + divId).text().trim();
+    $(".edit-canal").click(function() {
+        var canalId = $(this).data('canal-id');
+        var originalValue = $("#can_nombre_" + canalId).text();
 
-        var newName = prompt("Edita el nombre de la división:", originalName);
-        var newCode = prompt("Edita el código de la división:", originalCode);
+        var newValue = prompt("Edita el nombre del canal:", originalValue);
 
-        if (newName != null && newName != "" && newCode != null && newCode != "") {
-            newName = newName.toUpperCase(); // Convertir a mayúsculas
-
+        if (newValue != null && newValue != "") {
+            newValue = newValue.toUpperCase(); // Convertir a mayúsculas
             $.ajax({
-                url: 'man_div_p.php',
+                url: 'man_can_p.php',
                 type: 'POST',
-                data: { id_div: divId, f_op: 'e', f_nombre: newName, f_codigo: newCode },
+                data: { id_can: canalId, f_op: 'e', f_nombre: newValue },
                 success: function(response) {
                     var data = JSON.parse(response);
                     if (data.error) {
                         showErrorToast("Error al editar: " + data.message);
                     } else {
-                        showSuccessToast("División editada correctamente");
+                        showSuccessToast("Canal editado correctamente");
                         location.reload();
                     }
                 },
@@ -228,7 +225,5 @@ $(document).ready(function() {
     }
 });
 </script>
-
 </body>
-
 </html>
