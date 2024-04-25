@@ -42,7 +42,7 @@ session_start();
 
     <?php
 
-    include_once "conex.php"; 
+    include_once "conex.php";
 
     $link=conectarse();
     $ses_usu_id     = $_SESSION['ses_id'];
@@ -61,7 +61,8 @@ session_start();
      <!-- ======= Header ======= -->
       <?php
     include_once "lib_header.php";
-    include_once "lib_sidebar.php";?>
+    include_once "lib_sidebar.php";
+    ?>
       <!-- End Sidebar-->
   <main id="main" class="main">
 
@@ -102,11 +103,8 @@ session_start();
                       $consulta="select * from gd_canales";
                       $res=mysqli_query($link,$consulta);
                       while ($arr=mysqli_fetch_array($res)){
-                             
                             $v_can_id       = $arr['can_id'];  
                             $v_can_nombre   = $arr['can_nombre'];
-                             
-          
                   ?>
                   <tr>
                     <th scope="row"><?php echo $v_can_id ?></th>
@@ -130,7 +128,9 @@ session_start();
       </div>
     </section></main>
   <!-- ======= Footer ======= -->
-  <?php include_once "lib_footer.php"; ?>
+  <?php
+  include_once "lib_footer.php";
+  ?>
   <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
