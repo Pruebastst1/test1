@@ -32,9 +32,8 @@ session_start();
 </head>
 <body>
   <?php
-  include_once "conex.php"; 
+  include_once "conex.php";
   $link=conectarse();
-  //mysqli_query("SET NAMES 'utf8'");
   $ses_usu_id     = $_SESSION['ses_id'];
   $ses_usu_nombre = $_SESSION['ses_nombre'];
   $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
@@ -43,7 +42,7 @@ session_start();
   if ($ses_usu_id==""){
   ?> <script>location.href='index.php';</script> <?php
   }
-  ?>  
+  ?>
   <script>
     function validarMayusculas(input) {
       input.value = input.value.toUpperCase(); // Convierte el texto a mayúsculas

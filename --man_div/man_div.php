@@ -36,11 +36,9 @@ session_start();
 </head>
 <body>
      <?php
-           include_once "conex.php"; 
+           include_once "conex.php";
          
            $link=conectarse();
-           //mysqli_query("SET NAMES 'utf8'");
-           
            $ses_usu_id     = $_SESSION['ses_id'];
            $ses_usu_nombre = $_SESSION['ses_nombre'];
            $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
@@ -75,8 +73,7 @@ session_start();
 
     <section class="section">
       <div class="row">
-        <div class="col-lg-12">              
-
+        <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Divisiones</h5>  
@@ -87,8 +84,8 @@ session_start();
                   <tr>
                     <th scope="col">#ID</th>
                     <th scope="col">Código</th>
-                    <th scope="col">Nombre</th>                     
-                    <th scope="col" colspan="2"><a href="man_div_ag.php" class="btn btn-primary">  <i class="bi bi-plus-circle"></i> Agregar</a></th>                    
+                    <th scope="col">Nombre</th>
+                                        <th scope="col" colspan="2"><a href="man_div_ag.php" class="btn btn-primary">  <i class="bi bi-plus-circle"></i> Agregar</a></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -99,9 +96,9 @@ session_start();
                           
                             $v_div_id     = $arr['div_id'];
                             $v_div_div1   = $arr['div_div1'];
-                            $v_div_div2   = $arr['div_div2']; 
-                            $v_div_div3   = $arr['div_div3']; 
-                            $v_div_div4   = $arr['div_div4']; 
+                            $v_div_div2   = $arr['div_div2'];
+                            $v_div_div3   = $arr['div_div3'];
+                            $v_div_div4   = $arr['div_div4'];
                             $v_div_div5   = $arr['div_div5'];
                             $v_div_nombre = $arr['div_nombre'];
                              
