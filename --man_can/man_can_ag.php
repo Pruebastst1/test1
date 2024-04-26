@@ -3,7 +3,6 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -29,9 +28,9 @@ session_start();
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/toastify.min.css">
-<!-- JavaScript de Toastify -->
-<script type="text/javascript" src="assets/js/toastify-js"></script>
-<style>
+  <!-- JavaScript de Toastify -->
+  <script type="text/javascript" src="assets/js/toastify-js"></script>
+  <style>
         .monospace-font {
             font-family: 'Courier New', Courier, monospace;
         }
@@ -39,21 +38,22 @@ session_start();
 </head>
 <body>
   <?php
-		   include_once "conex.php"; 
-		   $link=conectarse();
-		   //mysqli_query("SET NAMES 'utf8'");
-		   $ses_usu_id     = $_SESSION['ses_id'];
-		   $ses_usu_nombre = $_SESSION['ses_nombre'];
-		   $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
-		   $ses_usu_ape_m  = $_SESSION['ses_ape_m'];
-		   $ses_usu_cargo  = $_SESSION['ses_cargo'];
-		   $ses_div_id	   = $_SESSION['ses_div_id'];
-		   $ses_nivel	   = $_SESSION['ses_nivel'];
+    include_once "conex.php"; 
+    $link=conectarse();
+    //mysqli_query("SET NAMES 'utf8'");
+    $ses_usu_id     = $_SESSION['ses_id'];
+    $ses_usu_nombre = $_SESSION['ses_nombre'];
+    $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
+    $ses_usu_ape_m  = $_SESSION['ses_ape_m'];
+    $ses_usu_cargo  = $_SESSION['ses_cargo'];
+    $ses_div_id     = $_SESSION['ses_div_id'];
+    $ses_nivel      = $_SESSION['ses_nivel'];
 
-		   if ($ses_usu_id==""){
-		         ?> <script>location.href='index.php';</script>
+    if ($ses_usu_id==""){
+?>
+      <script>location.href='index.php';</script>
 <?php
-}
+    }
 ?>
     <script>
         function validarMayusculas(input) {
@@ -74,7 +74,7 @@ session_start();
           <li class="breadcrumb-item"><a href="menu.php">Home</a></li>
           <li class="breadcrumb-item">Maestros</li>
           <li class="breadcrumb-item active">Canales</li>
-		  <li class="breadcrumb-item active">Agregar</li>
+          <li class="breadcrumb-item active">Agregar</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -86,18 +86,18 @@ session_start();
               <h5 class="card-title">Canales</h5>
               <!-- General Form Elements -->
               <form name="FormCan" id="FormCan2" enctype="multipart/form-data">         
-				<div class="row mb-3">
+                <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Nombre</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" name="f_nombre"   oninput="validarMayusculas(this)" required>
                   </div>
                 </div>
                 <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label"> </label>
+                  <label class="col-sm-2 col-form-label"></label>
                   <div class="col-sm-10">
                     <input type="hidden" name="f_op" value="a">
-					<input type="submit" class="btn btn-primary" value="Grabar">
-					<a href="man_can.php" class="btn btn-danger" >Volver</a>
+                    <input type="submit" class="btn btn-primary" value="Grabar">
+                    <a href="man_can.php" class="btn btn-danger" >Volver</a>
                   </div>
                 </div>
               </form><!-- End General Form Elements -->
@@ -122,7 +122,7 @@ session_start();
   <script src="assets/vendor/chart.js/chart.min.js"></script>
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 <script>
