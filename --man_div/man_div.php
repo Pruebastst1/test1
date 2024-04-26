@@ -25,31 +25,36 @@ session_start();
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/toastify.min.css">
+  <style>
+    .table td:nth-child(3) {
+      width: 60%; /* Define el ancho de la tercera columna */
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="assets/css/toastify.min.css">
 <!-- JavaScript de Toastify -->
 <script type="text/javascript" src="assets/js/toastify-js"></script>
 </head>
 <body>
-	 <?php
-		   include_once "conex.php"; 
-		 
-		   $link=conectarse();
-		   //mysqli_query("SET NAMES 'utf8'");
-		   
-		   $ses_usu_id     = $_SESSION['ses_id'];
-		   $ses_usu_nombre = $_SESSION['ses_nombre'];
-		   $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
-		   $ses_usu_ape_m  = $_SESSION['ses_ape_m'];
-		   $ses_usu_cargo  = $_SESSION['ses_cargo'];
-		   $ses_div_id	   = $_SESSION['ses_div_id'];
-		   $ses_nivel	   = $_SESSION['ses_nivel'];
+     <?php
+           include_once "conex.php"; 
+         
+           $link=conectarse();
+           //mysqli_query("SET NAMES 'utf8'");
+           
+           $ses_usu_id     = $_SESSION['ses_id'];
+           $ses_usu_nombre = $_SESSION['ses_nombre'];
+           $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
+           $ses_usu_ape_m  = $_SESSION['ses_ape_m'];
+           $ses_usu_cargo  = $_SESSION['ses_cargo'];
+           $ses_div_id     = $_SESSION['ses_div_id'];
+           $ses_nivel      = $_SESSION['ses_nivel'];
 
-		   if ($ses_usu_id==""){
-		         ?> <script>location.href='index.php';</script> <?php
-		   }
+           if ($ses_usu_id==""){
+                 ?> <script>location.href='index.php';</script> <?php
+           }
     ?>
-	
-	
+    
+    
   <!-- ======= Header ======= -->
   <?php
   include_once "lib_header.php";
@@ -80,62 +85,55 @@ session_start();
               <table class="table table-bordered border-primary">
                 <thead>
                   <tr>
-                     
-					<th scope="col">#ID</th>
+                    <th scope="col">#ID</th>
                     <th scope="col">Código</th>
-					<th scope="col">Nombre</th>
-					 
-                    <th scope="col" width="20%" colspan="2"><a href="man_div_ag.php" class="btn btn-primary">  <i class="bi bi-plus-circle"></i> Agregar</a></th>                    
-                     
+                    <th scope="col">Nombre</th>                     
+                    <th scope="col" colspan="2"><a href="man_div_ag.php" class="btn btn-primary">  <i class="bi bi-plus-circle"></i> Agregar</a></th>                    
                   </tr>
                 </thead>
                 <tbody>
-				  <?php
-				     $consulta="select * from gd_divisiones order by div_div1, div_div2, div_div3, div_div4, div_div5";
-					 $res=mysqli_query($link,$consulta);
-					 while ($arr=mysqli_fetch_array($res)){
-						  
-							$v_div_id	  = $arr['div_id'];
-							$v_div_div1	  = $arr['div_div1'];
-							$v_div_div2	  = $arr['div_div2']; 
-							$v_div_div3	  = $arr['div_div3']; 
-							$v_div_div4	  = $arr['div_div4']; 
-							$v_div_div5	  = $arr['div_div5'];
-							$v_div_nombre = $arr['div_nombre'];
-							 
-							// Array para almacenar las divisiones no vacías
-								$divisiones = array();
+                  <?php
+                     $consulta="select * from gd_divisiones order by div_div1, div_div2, div_div3, div_div4, div_div5";
+                     $res=mysqli_query($link,$consulta);
+                     while ($arr=mysqli_fetch_array($res)){
+                          
+                            $v_div_id     = $arr['div_id'];
+                            $v_div_div1   = $arr['div_div1'];
+                            $v_div_div2   = $arr['div_div2']; 
+                            $v_div_div3   = $arr['div_div3']; 
+                            $v_div_div4   = $arr['div_div4']; 
+                            $v_div_div5   = $arr['div_div5'];
+                            $v_div_nombre = $arr['div_nombre'];
+                             
+                            // Array para almacenar las divisiones no vacías
+                            $divisiones = array();
 
-								// Verificar y agregar las divisiones no vacías al array
-								if ($v_div_div1 != "") {
-									$divisiones[] = $v_div_div1;
-								}
-								if ($v_div_div2 != "") {
-									$divisiones[] = $v_div_div2;
-								}
-								if ($v_div_div3 != "") {
-									$divisiones[] = $v_div_div3;
-								}
-								if ($v_div_div4 != "") {
-									$divisiones[] = $v_div_div4;
-								}
-								if ($v_div_div5 != "") {
-									$divisiones[] = $v_div_div5;
-								}
+                            // Verificar y agregar las divisiones no vacías al array
+                            if ($v_div_div1 != "") {
+                                $divisiones[] = $v_div_div1;
+                            }
+                            if ($v_div_div2 != "") {
+                                $divisiones[] = $v_div_div2;
+                            }
+                            if ($v_div_div3 != "") {
+                                $divisiones[] = $v_div_div3;
+                            }
+                            if ($v_div_div4 != "") {
+                                $divisiones[] = $v_div_div4;
+                            }
+                            if ($v_div_div5 != "") {
+                                $divisiones[] = $v_div_div5;
+                            }
 
-								// Unir las divisiones con un guion
-								$division = implode('-', $divisiones);
-								 
-								$v_division = $division;
-                        						
-				  ?>
+                            // Unir las divisiones con un guion
+                            $division = implode('-', $divisiones);
+                                 
+                            $v_division = $division;
+                  ?>
                   <tr>
-				    <th scope="row"><?php echo $v_div_id ?></th>
-                    
+                    <th scope="row"><?php echo $v_div_id ?></th>
                     <td><?php echo $v_division ?></td>
-					<td><?php echo $v_div_nombre ?></td>
-					 
-					 				 
+                    <td><?php echo $v_div_nombre ?></td>
 <td>
     <button type="button" class="btn btn-success edit-div" data-div-id="<?php echo $v_div_id ?>">
         <i class="bi bi-pencil"></i>
@@ -144,33 +142,21 @@ session_start();
         <i class="bi bi-trash"></i>
     </button>
 </td>
-
-
-					
                   </tr>
-					 <?php } ?>
-                   
-                   
+                     <?php } ?>
                 </tbody>
               </table>
               <!-- End Primary Color Bordered Table -->
-
             </div>
           </div>
-
-          
-
         </div>
       </div>
     </section>
-
   </main><!-- End #main -->
   <!-- ======= Footer ======= -->
   <?php include_once "lib_footer.php"; ?>
   <!-- End Footer -->
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -180,7 +166,7 @@ session_start();
   <script src="assets/vendor/chart.js/chart.min.js"></script>
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 <script>
@@ -265,5 +251,4 @@ $(document).ready(function() {
 
 </script>
 </body>
-
 </html>
