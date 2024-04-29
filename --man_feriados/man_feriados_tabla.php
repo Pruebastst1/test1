@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(1);
-include("conex.php");
+include_once "conex.php";
 $link = conectarse();
 
 $des_mes[1] = "ENERO";
@@ -15,7 +15,7 @@ $des_mes[8] = "AGOSTO";
 $des_mes[9] = "SEPTIEMBRE";
 $des_mes[10] = "OCTUBRE";
 $des_mes[11] = "NOVIEMBRE";
-$des_mes[12] = "DICIEMBRE"; 
+$des_mes[12] = "DICIEMBRE";
 ?>
 <style>
 	#tablaFeriados thead th:nth-child(1) {
@@ -65,7 +65,10 @@ $des_mes[12] = "DICIEMBRE";
           <td><?php echo $v_fer_fecha ?></td>
           <td><?php echo $v_fer_nombre ?></td>
           <td>
-            <button class="btn btn-danger" data-idregistro="<?php echo $v_fer_id ?>" id="btnEliminar1"><i class="bi bi-trash"></i></button>
+            <button class="btn btn-danger" data-idregistro="<?php echo $v_fer_id ?>"
+            	id="btnEliminar1">
+            	<i class="bi bi-trash"></i>
+            </button>
           </td>
         </tr>
       <?php } ?>

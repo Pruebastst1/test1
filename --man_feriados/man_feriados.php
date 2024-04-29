@@ -4,66 +4,66 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <?php include_once "lib_title.php"; ?>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
-  Nunito:300,300i,400,400i,600,600i,700,700i|
-  Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<?php include_once "lib_title.php"; ?>
+<meta content="" name="description">
+<meta content="" name="keywords">
+<!-- Favicons -->
+<link href="assets/img/favicon.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- Google Fonts -->
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+Nunito:300,300i,400,400i,600,600i,700,700i|
+Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<!-- Vendor CSS Files -->
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+<link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+<link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+<!-- Template Main CSS File -->
+<link href="assets/css/style.css" rel="stylesheet">
 <!-- CSS de Toastify -->
 <link rel="stylesheet" type="text/css" href="assets/css/toastify.min.css">
 <!-- JavaScript de Toastify -->
 <script type="text/javascript" src="assets/js/toastify-js"></script>
 <script>
-				function convertirAMayusculas(input) {
-					input.value = input.value.toUpperCase();
-				}
+function convertirAMayusculas(input) {
+input.value = input.value.toUpperCase();
+}
 </script>
 </head>
 <body>
-    <?php
-		   include_once "conex.php";
-		   $link=conectarse();
-		   //mysqli_query("SET NAMES 'utf8'");
-		   $ses_usu_id     = $_SESSION['ses_id'];
-		   $ses_usu_nombre = $_SESSION['ses_nombre'];
-		   $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
-		   $ses_usu_ape_m  = $_SESSION['ses_ape_m'];
-		   $ses_usu_cargo  = $_SESSION['ses_cargo'];
-		   $ses_div_id	   = $_SESSION['ses_div_id'];
-		   $ses_nivel	   = $_SESSION['ses_nivel'];
-		   if ($ses_usu_id=="") {
-	         ?> <script>location.href='index.php';</script> <?php
-		   }
-		   $des_mes[1]="ENERO";
-		   $des_mes[2]="FEBRERO";
-		   $des_mes[3]="MARZO";
-		   $des_mes[4]="ABRIL";
-		   $des_mes[5]="MAYO";
-		   $des_mes[6]="JUNIO";
-		   $des_mes[7]="JULIO";
-		   $des_mes[8]="AGOSTO";
-		   $des_mes[9]="SEPTIEMBRE";
-		   $des_mes[10]="OCTUBRE";
-		   $des_mes[11]="NOVIEMBRE";
-		   $des_mes[12]="DICIEMBRE";
+<?php
+include_once "conex.php";
+$link=conectarse();
+//mysqli_query("SET NAMES 'utf8'");
+$ses_usu_id     = $_SESSION['ses_id'];
+$ses_usu_nombre = $_SESSION['ses_nombre'];
+$ses_usu_ape_p  = $_SESSION['ses_ape_p'];
+$ses_usu_ape_m  = $_SESSION['ses_ape_m'];
+$ses_usu_cargo  = $_SESSION['ses_cargo'];
+$ses_div_id	   = $_SESSION['ses_div_id'];
+$ses_nivel	   = $_SESSION['ses_nivel'];
+if ($ses_usu_id=="") {
+?> <script>location.href='index.php';</script> <?php
+		  }
+		  $des_mes[1]="ENERO";
+		  $des_mes[2]="FEBRERO";
+		  $des_mes[3]="MARZO";
+		  $des_mes[4]="ABRIL";
+		  $des_mes[5]="MAYO";
+		  $des_mes[6]="JUNIO";
+		  $des_mes[7]="JULIO";
+		  $des_mes[8]="AGOSTO";
+		  $des_mes[9]="SEPTIEMBRE";
+		  $des_mes[10]="OCTUBRE";
+		  $des_mes[11]="NOVIEMBRE";
+		  $des_mes[12]="DICIEMBRE";
     ?>
 	 <!-- ======= Header ======= -->
 	  <?php
@@ -111,7 +111,7 @@ session_start();
                 </div>
               </form><!-- End floating Labels Form -->
             </div>
-          </div>  	
+          </div>
           <div class="card">
             <div class="card-body" id="contenedorTabla">
               <!-- End Table with stripped rows -->
