@@ -1,5 +1,5 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -102,7 +102,8 @@ session_start();
 				<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Plazo</label>
                   <div class="col-sm-3">
-                    <input type="number" class="form-control" name="f_plazo"  value="<?php echo $v_mat_plazo ?>"   required>
+                    <input type="number" class="form-control" name="f_plazo"
+                    value="<?php echo $v_mat_plazo ?>" required>
                   </div>
                 </div>
                 <div class="row mb-3">
