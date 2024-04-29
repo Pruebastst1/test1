@@ -189,7 +189,15 @@ $(document).ready(function() {
                     if (data.error) {
                         showErrorToast("Error al editar: " + data.message);
                     } else {
-                        showSuccessToast("Canal editado correctamente");
+                        oastify({
+                          text: "Éxito: " + response.message,
+                          duration: 3000,
+                          close: true,
+                          gravity: "top",
+                          position: 'right',
+                          backgroundColor: "#388E3C",
+                          className: "info",
+                      }).showToast();
                       reloadTable();
                     }
                 },
