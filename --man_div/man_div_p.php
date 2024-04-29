@@ -15,12 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Realizar la operación correspondiente según la opción
     if ($f_op == "a") {
         // Preparar la sentencia SQL para insertar datos
-        $stmt = $link->prepare("INSERT INTO `gd_divisiones` (`div_id`, `div_div1`, `div_div2`, `div_div3`, `div_div4`, `div_div5`, `div_nombre`) 
+        $stmt = $link->prepare("INSERT INTO `gd_divisiones`
+            (`div_id`, `div_div1`, `div_div2`, `div_div3`, `div_div4`, `div_div5`, `div_nombre`) 
                              VALUES (NULL, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssss", $f_div1, $f_div2, $f_div3, $f_div4, $f_div5, $f_nombre);
     } elseif ($f_op == "e") {
         // Preparar la sentencia SQL para editar datos
-        $stmt = $link->prepare("UPDATE `gd_divisiones` SET `div_div1` = ?, `div_div2` = ?, `div_div3` = ?, `div_div4` = ?, `div_div5` = ?, `div_nombre` = ? WHERE `div_id` = ?");
+        $stmt = $link->prepare("UPDATE `gd_divisiones` SET `div_div1` = ?, `div_div2` = ?,
+            `div_div3` = ?, `div_div4` = ?, `div_div5` = ?, `div_nombre` = ?
+            WHERE `div_id` = ?");
         $stmt->bind_param("ssssssi", $f_div1, $f_div2, $f_div3, $f_div4, $f_div5, $f_nombre, $id_div);
     } elseif ($f_op == "b") {
         // Preparar la sentencia SQL para eliminar datos

@@ -102,9 +102,9 @@ Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
                 <tbody>
                   <?php
                       $consulta="select * from gd_canales";
-                      $res=mysqli_query($link,$consulta);
-                      while ($arr=mysqli_fetch_array($res)){
-                            $v_can_id       = $arr['can_id'];  
+                      $res=mysqli_query($link, $consulta);
+                      while ($arr=mysqli_fetch_array($res)) {
+                            $v_can_id       = $arr['can_id'];
                             $v_can_nombre   = $arr['can_nombre'];
                   ?>
                   <tr>
@@ -114,8 +114,8 @@ Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
                      
                     <td>
                          <input type="hidden" name="f_op" value="a">
-                         <button class="btn btn-danger delete-canal" 
-                            data-f_op="b" 
+                         <button class="btn btn-danger delete-canal"
+                            data-f_op="b"
                             data-canal-id="<?php echo $v_can_id ?>">
                             <i class="bi bi-trash"></i>
                          </button>

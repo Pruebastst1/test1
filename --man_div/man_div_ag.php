@@ -6,7 +6,9 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <?php include_once "lib_title.php"; ?>
+  <?php
+  include_once "lib_title.php";
+  ?>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!-- Favicons -->
@@ -14,7 +16,9 @@ session_start();
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+  Nunito:300,300i,400,400i,600,600i,700,700i|
+  Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -39,7 +43,7 @@ session_start();
   $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
   $ses_usu_ape_m  = $_SESSION['ses_ape_m'];
   $ses_usu_cargo  = $_SESSION['ses_cargo'];
-  if ($ses_usu_id==""){
+  if ($ses_usu_id=="") {
   ?> <script>location.href='index.php';</script> <?php
   }
   ?>
@@ -47,7 +51,7 @@ session_start();
     function validarMayusculas(input) {
       input.value = input.value.toUpperCase(); // Convierte el texto a mayúsculas
     }
-  </script> 
+  </script>
   <script>
     // Funcion que valida el código de las DIV, valida que solo se ingrese valores alfanuméricos.
     function validarCodigo(input) {
@@ -68,7 +72,8 @@ session_start();
   <!-- ======= Header ======= -->
   <?php
   include_once "lib_header.php";
-  include_once "lib_sidebar.php";?>
+  include_once "lib_sidebar.php";
+  ?>
   <!-- End Sidebar-->
   <main id="main" class="main">
     <div class="pagetitle">
@@ -94,7 +99,8 @@ session_start();
                   <label for="inputText" class="col-sm-2 col-form-label">Código</label>
                   <div class="col-sm-10">
                     <div class="d-inline-block">
-                      <input type="text" class="form-control" name="f_div1" size="5" oninput="validarCodigo(this)" required>
+                      <input type="text" class="form-control"
+                      name="f_div1" size="5" oninput="validarCodigo(this)" required>
                     </div>
                     <div class="d-inline-block">
                       <input type="text" class="form-control" name="f_div2" size="5" oninput="validarCodigo(this)">
@@ -133,7 +139,9 @@ session_start();
   <!-- ======= Footer ======= -->
   <?php include_once "lib_footer.php"; ?>
   <!-- End Footer -->
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>

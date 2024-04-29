@@ -14,7 +14,9 @@ session_start();
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+  Nunito:300,300i,400,400i,600,600i,700,700i|
+  Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -47,7 +49,7 @@ session_start();
            $ses_div_id     = $_SESSION['ses_div_id'];
            $ses_nivel      = $_SESSION['ses_nivel'];
 
-           if ($ses_usu_id==""){
+           if ($ses_usu_id=="") {
                  ?> <script>location.href='index.php';</script> <?php
            }
     ?>
@@ -85,7 +87,9 @@ session_start();
                     <th scope="col">#ID</th>
                     <th scope="col">Código</th>
                     <th scope="col">Nombre</th>
-                                        <th scope="col" colspan="2"><a href="man_div_ag.php" class="btn btn-primary">  <i class="bi bi-plus-circle"></i> Agregar</a></th>
+                    <th scope="col" colspan="2">
+                    <a href="man_div_ag.php" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> Agregar</a></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -153,7 +157,9 @@ session_start();
   <!-- ======= Footer ======= -->
   <?php include_once "lib_footer.php"; ?>
   <!-- End Footer -->
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+ <i class="bi bi-arrow-up-short"></i>
+</a>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
