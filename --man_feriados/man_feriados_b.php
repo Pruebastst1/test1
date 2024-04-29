@@ -2,6 +2,7 @@
 session_start();
 error_reporting(1);
 use Database\Conexion;
+
 require_once "Database.php";
 $db = new Conexion();
 $link = $db->getLink();
@@ -24,4 +25,3 @@ if (isset($_POST['id'])) {
     $stmt->close();
     $link->close();
 }
-

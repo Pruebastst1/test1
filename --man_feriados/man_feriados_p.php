@@ -13,7 +13,10 @@ $id_fer = isset($_GET['id_fer']) ? $_GET['id_fer'] : 0;
 // Convertir a entero para asegurar el tipo de dato correcto y seguridad adicional
 $id_fer = (int)$id_fer;
 
-if ($id_fer > 0) $f_op = "b";
+if ($id_fer > 0) {
+    $f_op = "b";
+}
+
 
 // OPCION AGREGAR NUEVO
 if ($f_op == "a") {

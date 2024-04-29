@@ -14,7 +14,9 @@ session_start();
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+  Nunito:300,300i,400,400i,600,600i,700,700i|
+  Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -37,7 +39,7 @@ session_start();
 </head>
 <body>
     <?php
-		   include_once "conex.php"; 
+		   include_once "conex.php";
 		   $link=conectarse();
 		   //mysqli_query("SET NAMES 'utf8'");
 		   $ses_usu_id     = $_SESSION['ses_id'];
@@ -47,7 +49,7 @@ session_start();
 		   $ses_usu_cargo  = $_SESSION['ses_cargo'];
 		   $ses_div_id	   = $_SESSION['ses_div_id'];
 		   $ses_nivel	   = $_SESSION['ses_nivel'];
-		   if ($ses_usu_id==""){
+		   if ($ses_usu_id=="") {
 	         ?> <script>location.href='index.php';</script> <?php
 		   }
 		   $des_mes[1]="ENERO";
@@ -66,7 +68,8 @@ session_start();
 	 <!-- ======= Header ======= -->
 	  <?php
       include_once "lib_header.php";
-      include_once "lib_sidebar.php";?>
+      include_once "lib_sidebar.php";
+      ?>
 	  <!-- End Sidebar-->
   <main id="main" class="main">
     <div class="pagetitle">
@@ -95,7 +98,8 @@ session_start();
                 </div>
 				<div class="col-md-6">
 					<div class="form-floating">
-						<input type="text" class="form-control" name="f_nombre" id="f_nombre" placeholder="Nombre Feriado" oninput="convertirAMayusculas(this)" required>
+						<input type="text" class="form-control" name="f_nombre" id="f_nombre"
+                        placeholder="Nombre Feriado" oninput="convertirAMayusculas(this)" required>
 						<label for="floatingPassword">Nombre</label>
 					</div>
 				</div>
@@ -120,7 +124,8 @@ session_start();
   <!-- ======= Footer ======= -->
   <?php include_once "lib_footer.php"; ?>
   <!-- End Footer -->
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i></a>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -184,12 +189,8 @@ $(document).ready(function() {
             });
         });
     });
-
-	
-
 	$(document).on('click', '#btnEliminar1', function() {
         var idRegistro = $(this).data('idregistro'); // Obtiene el ID del registro a eliminar
-
 		if(confirm('¿Estás seguro de que deseas eliminar este registro?')) {
 		    $.ajax({
 		        url: 'man_feriados_b.php', // El script PHP que maneja la eliminación
@@ -209,7 +210,6 @@ $(document).ready(function() {
                           backgroundColor: "#388E3C",
                           className: "info",
                       }).showToast();
-
 		                  //  alert("Éxito: " + response.message); // Mostrar mensaje de éxito
 		                   // $('#FormFeriados')[0].reset();
 		                   actualizarTabla();
@@ -224,10 +224,7 @@ $(document).ready(function() {
 		        }
 		    });
 		  }
-
-    });	
-
-
+    });
  function actualizarTabla() {
     $.ajax({
         url: 'man_feriados_tabla.php',
@@ -239,10 +236,6 @@ $(document).ready(function() {
             alert('Error al obtener los datos.');
         }
     });
-}   
-
-
-
+}
 </script>
-
 </html>
