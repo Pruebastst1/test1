@@ -16,7 +16,9 @@ session_start();
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+  Nunito:300,300i,400,400i,600,600i,700,700i|
+  Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -28,7 +30,7 @@ session_start();
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body> 
+<body>
     <?php
 		   include_once "conex.php";
 		   $link=conectarse();
@@ -70,7 +72,10 @@ session_start();
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Usuarios</h5>
-              <p align="right"><a href="index.php?a=<?=$b ?>"><button type="button" title="Agregar Nuevo" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar</button></a> </p>
+              <p align="right"><a href="index.php?a=<?=$b ?>">
+                <button type="button" title="Agregar Nuevo" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Agregar</button>
+            </a> </p>
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
@@ -120,7 +125,8 @@ if ($stmt->execute()) {
         $data = "man_usu_ed.php?id_usu=$v_usu_id";
         $c = cifraCesar($data, 3);
         ?>
-        <a href="index.php?a=<?php echo $c ?>"><button type="button" class="btn btn-success"><i class="bi bi-pencil"></i></button></a>
+        <a href="index.php?a=<?php echo $c ?>"><button type="button" class="btn btn-success">
+            <i class="bi bi-pencil"></i></button></a>
     </td>
 </tr>
 <?php
@@ -142,7 +148,8 @@ $stmt->close();
   </main><!-- End #main -->
   <!-- ======= Footer ======= -->
   <?php include_once "lib_footer.php"; ?>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i></a>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>

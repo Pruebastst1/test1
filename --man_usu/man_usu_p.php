@@ -29,10 +29,12 @@ $f_op = $_POST['f_op'];
 
 // OPCION AGREGAR NUEVO
 if ($f_op == "a") {
-    $consulta = "INSERT INTO `gd_usuges` (`usu_id`, `usu_login`, `usu_nombre`, `usu_ape_p`, `usu_ape_m`, `usu_cargo`, `usu_mail`, `usu_unidad`, `usu_tpu_id`, `usu_div_id`, `usu_estado`, `usu_nivel`, `usu_obs`, `usu_pass`) 
+    $consulta = "INSERT INTO `gd_usuges` (`usu_id`, `usu_login`, `usu_nombre`, `usu_ape_p`, `usu_ape_m`,
+        `usu_cargo`, `usu_mail`, `usu_unidad`, `usu_tpu_id`, `usu_div_id`, `usu_estado`, `usu_nivel`, `usu_obs`, `usu_pass`) 
                                 VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'VI', ?, ?, ?)";
     $stmt = mysqli_prepare($link, $consulta);
-    mysqli_stmt_bind_param($stmt, 'sssssssssss', $f_login, $f_nombre, $f_ape_p, $f_ape_m, $f_cargo, $f_mail, $f_unidad, $f_tipo, $f_division, $f_nivel, $f_obs, $f_login);
+    mysqli_stmt_bind_param($stmt, 'sssssssssss', $f_login, $f_nombre, $f_ape_p, $f_ape_m, $f_cargo,
+        $f_mail, $f_unidad, $f_tipo, $f_division, $f_nivel, $f_obs, $f_login);
     mysqli_stmt_execute($stmt);
 
     // Recupera el último registro
@@ -62,19 +64,20 @@ if ($f_op == "a") {
 // opción EDITAR
 if ($f_op == "e") {
     $consulta = "UPDATE `gd_usuges` set
-                                     `usu_mail`        = ?, 
-                                     `usu_nombre`      = ?, 
-                                     `usu_ape_p`       = ?, 
-                                     `usu_ape_m`       = ?, 
-                                     `usu_cargo`       = ?, 
+                                     `usu_mail`        = ?,
+                                     `usu_nombre`      = ?,
+                                     `usu_ape_p`       = ?,
+                                     `usu_ape_m`       = ?,
+                                     `usu_cargo`       = ?,
                                      `usu_unidad`      = ?,
                                      `usu_tpu_id`      = ?,
                                      `usu_div_id`      = ?,
                                      `usu_nivel`       = ?,
-                                     `usu_obs`         = ? 
+                                     `usu_obs`         = ?
                              WHERE  `usu_id` = ?";
     $stmt = mysqli_prepare($link, $consulta);
-    mysqli_stmt_bind_param($stmt, 'ssssssssssi', $f_mail, $f_nombre, $f_ape_p, $f_ape_m, $f_cargo, $f_unidad, $f_tipo, $f_division, $f_nivel, $f_obs, $id_usu);
+    mysqli_stmt_bind_param($stmt, 'ssssssssssi', $f_mail, $f_nombre, $f_ape_p, $f_ape_m, $f_cargo, $f_unidad, $f_tipo,
+        $f_division, $f_nivel, $f_obs, $id_usu);
     mysqli_stmt_execute($stmt);
     $id_usr = $id_usu;
 

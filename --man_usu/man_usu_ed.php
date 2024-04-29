@@ -18,7 +18,9 @@ $link = conectarse();
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+  Nunito:300,300i,400,400i,600,600i,700,700i|
+  Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -104,19 +106,22 @@ $link = conectarse();
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Nombre</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_nombre" oninput="validarMayusculas(this)" value="<?php echo $v_usu_nombre ?>" required>
+                    <input type="text" class="form-control" name="f_nombre" oninput="validarMayusculas(this)"
+                    value="<?php echo $v_usu_nombre ?>" required>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Apellido Pat.</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_ape_p" oninput="validarMayusculas(this)" value="<?php echo $v_usu_ape_p ?>" required>
+                    <input type="text" class="form-control" name="f_ape_p" oninput="validarMayusculas(this)"
+                    value="<?php echo $v_usu_ape_p ?>" required>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Apellido Mat.</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_ape_m" oninput="validarMayusculas(this)" value="<?php echo $v_usu_ape_m ?>" required>
+                    <input type="text" class="form-control" name="f_ape_m" oninput="validarMayusculas(this)"
+                    value="<?php echo $v_usu_ape_m ?>" required>
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -128,13 +133,15 @@ $link = conectarse();
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Cargo</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_cargo" oninput="validarMayusculas(this)" value="<?php echo $v_usu_cargo ?>" required>
+                    <input type="text" class="form-control" name="f_cargo" oninput="validarMayusculas(this)"
+                    value="<?php echo $v_usu_cargo ?>" required>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Unidad</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_unidad" oninput="validarMayusculas(this)" value="<?php echo $v_usu_unidad ?>" required>
+                    <input type="text" class="form-control" name="f_unidad" oninput="validarMayusculas(this)"
+                    value="<?php echo $v_usu_unidad ?>" required>
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -200,7 +207,8 @@ $link = conectarse();
                         $cantidad_espacios = 20 - $longitud_codigo;
                         $espacios = str_repeat("&nbsp;", $cantidad_espacios);
                       ?>
-                      <option value="<?php echo $v_div_id ?>" <?php if ($v_usu_div_id == $v_div_id) echo "selected"; ?>><?php echo $v_division, $espacios, " ", $v_div_nombre ?></option>
+                      <option value="<?php echo $v_div_id ?>" <?php if ($v_usu_div_id == $v_div_id) echo "selected"; ?>>
+                        <?php echo $v_division, $espacios, " ", $v_div_nombre ?></option>
                       <?php } ?>
                     </select>
                   </div>
@@ -217,7 +225,8 @@ $link = conectarse();
                         $v_tpu_id = $arr['tpu_id'];
                         $v_tpu_nombre = $arr['tpu_nombre'];
                       ?>
-                      <option value="<?php echo $v_tpu_id ?>" <?php if ($v_usu_tpu_id == $v_tpu_id) echo "selected"; ?>><?php echo $v_tpu_nombre ?></option>
+                      <option value="<?php echo $v_tpu_id ?>" <?php if ($v_usu_tpu_id == $v_tpu_id) echo "selected"; ?>>
+                        <?php echo $v_tpu_nombre ?></option>
                       <?php } ?>
                     </select>
                   </div>
@@ -257,13 +266,13 @@ $link = conectarse();
                   </div>
                 </div>
               </form>
-                                          <form name="f1" id="demo-form2" method="POST" action="man_usu_p.php" enctype="multipart/form-data">
+              <form name="f1" id="demo-form2" method="POST" action="man_usu_p.php" enctype="multipart/form-data">
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label"> </label>
                                     <div class="col-sm-10">
                                         <input type="hidden" name="f_op" value="rp">
                                         <input type="hidden" name="id_usu" value="<?php echo $id_usu ?>">
-                                        <input type="submit" class="btn btn-success" value="Reiniciar Password"> Al ejecutar esta acción la contraseña se reinicia a la por defecto.
+                  <input type="submit" class="btn btn-success" value="Reiniciar Password"> <!-- Al ejecutar esta acción la contraseña se reinicia a la por defecto. -->
                                     </div>
                                 </div>
                             </form>
@@ -275,19 +284,20 @@ $link = conectarse();
                                     <div class="col-sm-10">
                                         <input type="hidden" name="f_op" value="au">
                                         <input type="hidden" name="id_usu" value="<?php echo $id_usu ?>">
-                                        <input type="submit" class="btn btn-success" value="Activar Usuario"> Al ejecutar esta acción se activará la cuenta del usuario.
+                                        <input type="submit" class="btn btn-success" value="Activar Usuario"><!--Al ejecutar esta acción se activará la cuenta del usuario.-->
                                     </div>
                                 </div>
                             </form>
                             <?php } ?>
                             <?php if ($v_usu_estado == "VI"){ ?>
-                            <form name="f1" id="demo-form2" method="POST" action="man_usu_p.php" enctype="multipart/form-data">
+                            <form name="f1" id="demo-form2" method="POST" action="man_usu_p.php"
+                            enctype="multipart/form-data">
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label"> </label>
                                     <div class="col-sm-10">
                                         <input type="hidden" name="f_op" value="du">
                                         <input type="hidden" name="id_usu" value="<?php echo $id_usu ?>">
-                                        <input type="submit" class="btn btn-danger" value="Desactivar Usuario"> Al ejecutar esta acción se DESACTIVARÁ la cuenta del usuario.
+                                        <input type="submit" class="btn btn-danger" value="Desactivar Usuario"><!-- Al ejecutar esta acción se DESACTIVARÁ la cuenta del usuario. -->
                                     </div>
                                 </div>
                             </form>
@@ -299,7 +309,9 @@ $link = conectarse();
     </section><!-- End Section -->
   </main><!-- End Main -->
   <?php include_once "lib_footer.php"; ?>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short">
+    </i></a>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>

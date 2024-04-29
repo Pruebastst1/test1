@@ -15,7 +15,9 @@ session_start();
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+  Nunito:300,300i,400,400i,600,600i,700,700i|
+  Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -34,16 +36,11 @@ session_start();
         }
   </style>
 </head>
-
 <body>
-
   <?php
-
-		   include_once "conex.php"; 
-		 
+		   include_once "conex.php";
 		   $link=conectarse();
 		   //mysqli_query("SET NAMES 'utf8'");
-		   
 		   $ses_usu_id     = $_SESSION['ses_id'];
 		   $ses_usu_nombre = $_SESSION['ses_nombre'];
 		   $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
@@ -51,9 +48,9 @@ session_start();
 		   $ses_usu_cargo  = $_SESSION['ses_cargo'];
 		   $ses_div_id	   = $_SESSION['ses_div_id'];
 		   $ses_nivel	   = $_SESSION['ses_nivel'];
-
-		   if ($ses_usu_id==""){
-		         ?> <script>location.href='index.php';</script> <?php
+		   if ($ses_usu_id=="") {
+		         ?> <script>location.href='index.php';</script>
+                 <?php
 		   }
     ?>
     <script>
@@ -98,21 +95,24 @@ session_start();
 				<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Nombre</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_nombre"   oninput="validarMayusculas(this)" required>
+                    <input type="text" class="form-control" name="f_nombre"
+                    oninput="validarMayusculas(this)" required>
                   </div>
                 </div>
 							
 				<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Apellido Pat.</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_ape_p"   oninput="validarMayusculas(this)" required>
+                    <input type="text" class="form-control" name="f_ape_p"
+                    oninput="validarMayusculas(this)" required>
                   </div>
                 </div>
 								
 				<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Apellito Mat.</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_ape_m"   oninput="validarMayusculas(this)" required>
+                    <input type="text" class="form-control" name="f_ape_m"
+                    oninput="validarMayusculas(this)" required>
                   </div>
                 </div>
 				
@@ -126,7 +126,8 @@ session_start();
 				<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Cargo</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_cargo"   oninput="validarMayusculas(this)" required>
+                    <input type="text" class="form-control" name="f_cargo"
+                    oninput="validarMayusculas(this)" required>
                   </div>
                 </div>
 				
@@ -150,7 +151,8 @@ session_start();
                       <option selected>Seleccione...</option>
 <?php
 // Consulta para obtener las divisiones
-$con_divisiones = "SELECT * FROM gd_divisiones ORDER BY div_div1, div_div2, div_div3, div_div4, div_div5";
+$con_divisiones = "SELECT * FROM gd_divisiones
+ORDER BY div_div1, div_div2, div_div3, div_div4, div_div5";
 $stmt_divisiones = $link->prepare($con_divisiones);
 if (!$stmt_divisiones) {
     echo json_encode(['error' => true, 'message' => "Error al preparar la consulta: " . $link->error]);
@@ -164,7 +166,8 @@ if ($stmt_divisiones->execute()) {
     // Generar las opciones para las divisiones
     while ($arr_divisiones = $res_divisiones->fetch_assoc()) {
         // Obtener las divisiones no vacías
-        $divisiones = array_filter([$arr_divisiones['div_div1'], $arr_divisiones['div_div2'], $arr_divisiones['div_div3'], $arr_divisiones['div_div4'], $arr_divisiones['div_div5']]);
+        $divisiones = array_filter([$arr_divisiones['div_div1'], $arr_divisiones['div_div2'],
+            $arr_divisiones['div_div3'], $arr_divisiones['div_div4'], $arr_divisiones['div_div5']]);
         
         // Unir las divisiones con un guion
         $v_division = implode('-', $divisiones);
