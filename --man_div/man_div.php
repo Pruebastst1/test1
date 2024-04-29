@@ -78,7 +78,7 @@ session_start();
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Divisiones</h5>  
+              <h5 class="card-title">Divisiones</h5>
                
               <!-- Primary Color Bordered Table -->
               <table class="table table-bordered border-primary">
@@ -95,8 +95,8 @@ session_start();
                 <tbody>
                   <?php
                      $consulta="select * from gd_divisiones order by div_div1, div_div2, div_div3, div_div4, div_div5";
-                     $res=mysqli_query($link,$consulta);
-                     while ($arr=mysqli_fetch_array($res)){
+                     $res=mysqli_query($link, $consulta);
+                     while ($arr=mysqli_fetch_array($res)) {
                           
                             $v_div_id     = $arr['div_id'];
                             $v_div_div1   = $arr['div_div1'];

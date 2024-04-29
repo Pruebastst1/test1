@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($f_op == "a") {
         // Preparar la sentencia SQL para insertar datos
         $stmt = $link->prepare("INSERT INTO `gd_divisiones`
-            (`div_id`, `div_div1`, `div_div2`, `div_div3`, `div_div4`, `div_div5`, `div_nombre`) 
+            (`div_id`, `div_div1`, `div_div2`, `div_div3`, `div_div4`, `div_div5`, `div_nombre`)
                              VALUES (NULL, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssss", $f_div1, $f_div2, $f_div3, $f_div4, $f_div5, $f_nombre);
     } elseif ($f_op == "e") {
