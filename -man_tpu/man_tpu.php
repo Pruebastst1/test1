@@ -7,7 +7,9 @@ session_start();
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-  <?php include_once "lib_title.php"; ?>
+  <?php
+  include_once "lib_title.php";
+  ?>
   
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -18,7 +20,9 @@ session_start();
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+  Nunito:300,300i,400,400i,600,600i,700,700i|
+  Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +41,7 @@ session_start();
 
     <?php
 
-		   include_once "conex.php"; 
+		   include_once "conex.php";
 		 
 		   $link=conectarse();
 		   //mysqli_query("SET NAMES 'utf8'");
@@ -50,7 +54,7 @@ session_start();
 		   $ses_div_id	   = $_SESSION['ses_div_id'];
 		   $ses_nivel	   = $_SESSION['ses_nivel'];
 
-		   if ($ses_usu_id==""){
+		   if ($ses_usu_id=="") {
 		         ?> <script>location.href='index.php';</script> <?php
 		   }
     ?>
@@ -83,7 +87,10 @@ session_start();
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Tipos de Usuario</h5>
-              <p align="right"><a href="man_tpu_ag.php"><button type="button" title="Agregar Nuevo" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar</button></a> </p>
+              <p align="right"><a href="man_tpu_ag.php">
+                <button type="button" title="Agregar Nuevo" class="btn btn-primary">
+                  <i class="bi bi-plus-circle"></i> Agregar</button></a>
+                </p>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -97,10 +104,10 @@ session_start();
                 <tbody>
 				  <?php
 				      $consulta="select * from gd_tipousu";
-					  $res=mysqli_query($link,$consulta);
-					  while ($arr=mysqli_fetch_array($res)){
+					  $res=mysqli_query($link, $consulta);
+					  while ($arr=mysqli_fetch_array($res)) {
 						     
-							$v_tpu_id		= $arr['tpu_id'];	
+							$v_tpu_id		= $arr['tpu_id'];
 							$v_tpu_nombre	= $arr['tpu_nombre'];
 		
 				  ?>
@@ -111,7 +118,11 @@ session_start();
 					 
                     <td>
 					     
-					     <a href="man_tpu_ed.php?id_tpu=<?php echo $v_tpu_id ?>"><button type="button" class="btn btn-success"><i class="bi bi-pencil"></i></button></a>
+					     <a href="man_tpu_ed.php?id_tpu=<?php echo $v_tpu_id ?>">
+                <button type="button" class="btn btn-success">
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </a>
 				    </td>
                   </tr>
 				  
@@ -134,7 +145,9 @@ session_start();
   <?php include_once "lib_footer.php"; ?>
   <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
