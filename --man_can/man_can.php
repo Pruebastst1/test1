@@ -114,7 +114,8 @@ session_start();
                     <td>
                          <input type="hidden" name="f_op" value="a">
                          <button class="btn btn-danger delete-canal" data-f_op="b" data-canal-id="<?php echo $v_can_id ?>"><i class="bi bi-trash"></i></button>
-                         <button class="btn btn-success edit-canal" data-original-value="<?php echo $v_can_nombre ?>" data-canal-id="<?php echo $v_can_id ?>"><i class="bi bi-pencil"></i></button>
+                         <button class="btn btn-success edit-canal" data-original-value="<?php echo $v_can_nombre ?>" data-canal-id="<?php echo $v_can_id ?>">
+                            <i class="bi bi-pencil"></i></button>
                     </td>
                   </tr>
                   

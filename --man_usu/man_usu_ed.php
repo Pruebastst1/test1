@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "conex.php"; 
+include_once "conex.php";
 $link = conectarse();
 ?>
 <!DOCTYPE html>
@@ -39,7 +39,7 @@ $link = conectarse();
   $ses_usu_cargo  = $_SESSION['ses_cargo'];
   $ses_div_id     = $_SESSION['ses_div_id'];
   $ses_nivel      = $_SESSION['ses_nivel'];
-  if ($ses_usu_id == ""){
+  if ($ses_usu_id == "") {
     ?>
     <script>location.href='index.php';</script>
     <?php
@@ -59,7 +59,7 @@ $link = conectarse();
   <?php
   $consulta = "select * from gd_usuges where usu_id = '$a1'";
   $res = mysqli_query($link, $consulta);
-  while ($arr = mysqli_fetch_array($res)){
+  while ($arr = mysqli_fetch_array($res)) {
     $v_usu_id     = $arr['usu_id'];
     $v_usu_login  = $arr['usu_login'];
     $v_usu_nombre = $arr['usu_nombre'];
@@ -73,7 +73,7 @@ $link = conectarse();
     $v_usu_estado = $arr['usu_estado'];
     $v_usu_nivel  = $arr['usu_nivel'];
     $v_usu_obs    = $arr['usu_obs'];
-    $v_usu_pass   = $arr['usu_pass'];     
+    $v_usu_pass   = $arr['usu_pass'];
   }
   ?>
   <main id="main" class="main">
@@ -167,11 +167,11 @@ $link = conectarse();
                   <div class="col-sm-10">
                     <select class="form-select monospace-font" aria-label="Default select example" name="f_division">
                       <option selected>Seleccione...</option>
-                      <?php 
+                      <?php
                       $con2 = "select * from gd_divisiones order by div_div1, div_div2, div_div3, div_div4, div_div5 ";
                       $res = mysqli_query($link, $con2);
-                      while ($arr = mysqli_fetch_array($res)){
-                        $v_div_id = $arr['div_id']; 
+                      while ($arr = mysqli_fetch_array($res)) {
+                        $v_div_id = $arr['div_id'];
                         $v_div_div1 = $arr['div_div1'];
                         $v_div_div2 = $arr['div_div2'];
                         $v_div_div3 = $arr['div_div3'];

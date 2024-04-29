@@ -16,7 +16,9 @@ session_start();
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+Nunito:300,300i,400,400i,600,600i,700,700i|
+Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -34,11 +36,11 @@ session_start();
         .monospace-font {
             font-family: 'Courier New', Courier, monospace;
         }
-  </style>  
+  </style>
 </head>
 <body>
   <?php
-    include_once "conex.php"; 
+    include_once "conex.php";
     $link=conectarse();
     //mysqli_query("SET NAMES 'utf8'");
     $ses_usu_id     = $_SESSION['ses_id'];
@@ -49,7 +51,7 @@ session_start();
     $ses_div_id     = $_SESSION['ses_div_id'];
     $ses_nivel      = $_SESSION['ses_nivel'];
 
-    if ($ses_usu_id==""){
+    if ($ses_usu_id=="") {
 ?>
       <script>location.href='index.php';</script>
 <?php
@@ -85,11 +87,11 @@ session_start();
             <div class="card-body">
               <h5 class="card-title">Canales</h5>
               <!-- General Form Elements -->
-              <form name="FormCan" id="FormCan2" enctype="multipart/form-data">         
+              <form name="FormCan" id="FormCan2" enctype="multipart/form-data">
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Nombre</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_nombre"   oninput="validarMayusculas(this)" required>
+                    <input type="text" class="form-control" name="f_nombre" oninput="validarMayusculas(this)" required>
                   </div>
                 </div>
                 <div class="row mb-3">

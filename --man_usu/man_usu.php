@@ -27,43 +27,23 @@ session_start();
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
 </head>
-
 <body> 
     <?php
-
-		   include_once "conex.php"; 
+		   include_once "conex.php";
 		   $link=conectarse();
-
-		   //mysqli_query("SET NAMES 'utf8'");
-
-		   
-
 		   $ses_usu_id     = $_SESSION['ses_id'];
-
 		   $ses_usu_nombre = $_SESSION['ses_nombre'];
-
 		   $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
-
 		   $ses_usu_ape_m  = $_SESSION['ses_ape_m'];
-
 		   $ses_usu_cargo  = $_SESSION['ses_cargo'];
-
 		   $ses_div_id	   = $_SESSION['ses_div_id'];
-
 		   $ses_nivel	   = $_SESSION['ses_nivel'];
-
-
-
-		   if ($ses_usu_id==""){
-
-		         ?> <script>location.href='index.php';</script> <?php
-
+		   if ($ses_usu_id=="") {
+		         ?> <script>location.href='index.php';</script>
+                 <?php
 		   }
     ?>
-
-	
    <!-- ======= Header ======= -->
     <?php include_once "lib_header.php";?>
     <!-- End Header -->   <!-- ======= Sidebar ======= -->
@@ -76,65 +56,33 @@ session_start();
 	  <!-- End Sidebar-->
   <main id="main" class="main">
     <div class="pagetitle">
-
       <h1>Usuarios</h1>
-
       <nav>
-
         <ol class="breadcrumb">
-
           <li class="breadcrumb-item"><a href="index.php?a=<?=$a ?>">Home</a></li>
-
           <li class="breadcrumb-item">Usuarios</li>
-
-          
-
         </ol>
-
       </nav>
-
     </div><!-- End Page Title -->
-
     <section class="section">
-
       <div class="row">
-
         <div class="col-lg-12">
-
           <div class="card">
-
             <div class="card-body">
-
               <h5 class="card-title">Usuarios</h5>
-
               <p align="right"><a href="index.php?a=<?=$b ?>"><button type="button" title="Agregar Nuevo" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar</button></a> </p>
-
-
-
               <!-- Table with stripped rows -->
-
               <table class="table datatable">
-
                 <thead>
-
                   <tr>
-
                     <th scope="col">Apellido Pat.</th>
-
                     <th scope="col">Apellido Mat.</th>
-
                     <th scope="col">Nombres</th>
-
                     <th scope="col">Unidad</th>
-
 					<th scope="col">Estado</th>
-
                   </tr>
-
                 </thead>
-
                 <tbody>
-
 <?php
 $consulta = "SELECT * FROM gd_usuges";
 $stmt = $link->prepare($consulta);
@@ -142,7 +90,6 @@ if (!$stmt) {
     echo json_encode(['error' => true, 'message' => "Error al preparar la sentencia: " . $link->error]);
     exit;
 }
-
 // Ejecutar la sentencia
 if ($stmt->execute()) {
     $res = $stmt->get_result();
@@ -181,7 +128,6 @@ if ($stmt->execute()) {
 } else {
     echo json_encode(['error' => true, 'message' => "Error al ejecutar la consulta: " . $stmt->error]);
 }
-
 // Cerrar la sentencia
 $stmt->close();
 ?>
@@ -195,7 +141,6 @@ $stmt->close();
     </section>
   </main><!-- End #main -->
   <!-- ======= Footer ======= -->
-
   <?php include_once "lib_footer.php"; ?>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <!-- Vendor JS Files -->
@@ -208,7 +153,6 @@ $stmt->close();
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
   bv<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
