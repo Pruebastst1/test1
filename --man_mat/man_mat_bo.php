@@ -16,7 +16,9 @@ session_start();
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+  Nunito:300,300i,400,400i,600,600i,700,700i|
+  Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -32,19 +34,12 @@ session_start();
             font-family: 'Courier New', Courier, monospace;
         }
   </style>
-  
-  
 </head>
-
 <body>
-
   <?php
-
 		   include_once "conex.php";
-		 
 		   $link=conectarse();
 		   //mysqli_query("SET NAMES 'utf8'");
-		   
 		   $ses_usu_id     = $_SESSION['ses_id'];
 		   $ses_usu_nombre = $_SESSION['ses_nombre'];
 		   $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
@@ -52,42 +47,29 @@ session_start();
 		   $ses_usu_cargo  = $_SESSION['ses_cargo'];
 		   $ses_div_id	   = $_SESSION['ses_div_id'];
 		   $ses_nivel	   = $_SESSION['ses_nivel'];
-
-		   if ($ses_usu_id==""){
+		   if ($ses_usu_id=="") {
 		         ?> <script>location.href='index.php';</script> <?php
 		   }
-		   
 		   $id_mat	= $_GET['id_mat'];
 		   $consulta="select * from gd_materias where mat_id = '$id_mat'";
-		   $res=mysqli_query($link,$consulta);
-		   while ($arr=mysqli_fetch_array($res)){
-				 
-				$v_mat_id		= $arr['mat_id'];	
+		   $res=mysqli_query($link, $consulta);
+		   while ($arr=mysqli_fetch_array($res)) {
+				$v_mat_id		= $arr['mat_id'];
 				$v_mat_nombre	= $arr['mat_nombre'];
 				$v_mat_plazo	= $arr['mat_plazo'];
 		   }
-
     ?>
-	
-	
-	 
-	
     <script>
         function validarMayusculas(input) {
             input.value = input.value.toUpperCase(); // Convierte el texto a mayúsculas
         }
     </script>
-	
-
   <!-- ======= Header ======= -->
   <?php
   include_once "lib_header.php";
   include_once "lib_sidebar.php";?>
   <!-- End Sidebar-->
-
-
   <main id="main" class="main">
-
     <div class="pagetitle">
       <h1>Mantención de Tipos de SOlicitud</h1>
       <nav>
@@ -99,7 +81,6 @@ session_start();
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
@@ -107,32 +88,23 @@ session_start();
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Materias</h5>
-
               <!-- General Form Elements -->
-              <form name="f1" id="demo-form2"   method="POST" action="man_mat_p.php" enctype="multipart/form-data">
-			  
-			     
-                
+              <form name="f1" id="demo-form2"   method="POST" action="man_mat_p.php"
+              enctype="multipart/form-data">
 				<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Nombre</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_nombre"  value="<?php echo $v_mat_nombre ?>" oninput="validarMayusculas(this)" required>
+                    <input type="text" class="form-control" name="f_nombre"
+                    value="<?php echo $v_mat_nombre ?>"
+                    oninput="validarMayusculas(this)" required>
                   </div>
                 </div>
-				
 				<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Plazo</label>
                   <div class="col-sm-3">
                     <input type="number" class="form-control" name="f_plazo"  value="<?php echo $v_mat_plazo ?>"   required>
                   </div>
                 </div>
-				
-				
-				  
-				
-				 
-                
-
                 <div class="row mb-3">
                   <label class="col-sm-2 col-form-label"> </label>
                   <div class="col-sm-10">
@@ -158,7 +130,8 @@ session_start();
   <?php include_once "lib_footer.php"; ?>
   <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
@@ -169,10 +142,7 @@ session_start();
   <script src="assets/vendor/chart.js/chart.min.js"></script>
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
-
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
