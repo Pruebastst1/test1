@@ -8,7 +8,9 @@ $link = conectarse();
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <?php include_once "lib_title.php"; ?>
+  <?php
+  include_once "lib_title.php";
+  ?>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!-- Favicons -->

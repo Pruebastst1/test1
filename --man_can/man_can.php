@@ -190,7 +190,7 @@ $(document).ready(function() {
                         showErrorToast("Error al editar: " + data.message);
                     } else {
                         showSuccessToast("Canal editado correctamente");
-                        location.reload();
+                      reloadTable();
                     }
                 },
                 error: function(xhr, status, error) {
@@ -224,6 +224,20 @@ $(document).ready(function() {
         }).showToast();
     }
 });
+function reloadTable() {
+        $.ajax({
+            url: 'man_can_p.php', // La URL de donde obtienes los datos de la tabla
+            type: 'GET', // Puedes usar GET si es necesario
+            success: function(response) {
+                // Reemplaza el contenido de la tabla con el nuevo contenido
+                $(".datatable").html($(response).find(".datatable").html());
+            },
+            error: function(xhr, status, error) {
+                showErrorToast("Error al actualizar la tabla: " + error);
+            }
+        });
+    }
+
 </script>
 </body>
 </html>
