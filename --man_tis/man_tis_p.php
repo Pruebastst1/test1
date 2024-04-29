@@ -8,11 +8,7 @@ $link = conectarse();
 $f_nombre = $_POST['f_nombre'];
 $f_op = $_POST['f_op'];
 $id_tis = $_POST['id_tis'];
-// Función para redirigir a man_tis.php
-function redirect_to_man_tis() {
-    echo '<script>window.location.href = "man_tis.php";</script>';
-    exit();
-}
+
 // OPCION AGREGAR NUEVO
 if ($f_op == "a") {
     // Preparar la sentencia SQL para insertar datos
@@ -21,7 +17,7 @@ if ($f_op == "a") {
 
 if ($stmt->execute()) {
 echo json_encode(['success' => true]);
-exit(); 
+exit();
    } else {
         echo json_encode(['error' => true, 'message' => "Error al ejecutar la consulta: " . $stmt->error]);
     }
@@ -35,7 +31,7 @@ if ($f_op == "e") {
 
 if ($stmt->execute()) {
 echo json_encode(['success' => true]);
-exit(); 
+exit();
    } else {
         echo json_encode(['error' => true, 'message' => "Error al ejecutar la consulta: " . $stmt->error]);
     }
