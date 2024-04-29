@@ -308,7 +308,9 @@ $link = conectarse();
       </div><!-- End Row -->
     </section><!-- End Section -->
   </main><!-- End Main -->
-  <?php include_once "lib_footer.php"; ?>
+  <?php
+  include_once "lib_footer.php";
+  ?>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
     <i class="bi bi-arrow-up-short">
     </i></a>
