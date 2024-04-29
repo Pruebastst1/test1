@@ -1,5 +1,5 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 error_reporting(1);
 include_once "conex.php";
 $link = conectarse();
@@ -16,7 +16,7 @@ if ($f_op == "a") {
     $stmt->bind_param("ss", $f_codigo, $f_nombre);
     if ($stmt->execute()) {
 echo json_encode(['success' => true]);
-exit(); 
+exit();
    } else {
         echo json_encode(['error' => true, 'message' => "Error al ejecutar la consulta: " . $stmt->error]);
     }
@@ -30,7 +30,7 @@ if ($f_op == "e") {
     $stmt->bind_param("ssi", $f_codigo, $f_nombre, $id_tid);
 if ($stmt->execute()) {
 echo json_encode(['success' => true]);
-exit(); 
+exit();
    } else {
         echo json_encode(['error' => true, 'message' => "Error al ejecutar la consulta: " . $stmt->error]);
     }
@@ -44,7 +44,7 @@ if ($f_op == "b") {
     $stmt->bind_param("i", $id_tid);
 if ($stmt->execute()) {
 echo json_encode(['success' => true]);
-exit(); 
+exit();
    } else {
         echo json_encode(['error' => true, 'message' => "Error al ejecutar la consulta: " . $stmt->error]);
     }

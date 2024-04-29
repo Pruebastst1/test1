@@ -1,5 +1,5 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +19,9 @@ session_start();
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
+  Nunito:300,300i,400,400i,600,600i,700,700i|
+  Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -29,20 +30,14 @@ session_start();
   <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
   <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
-
 <body>
-
     <?php
-
-		   include_once "conex.php"; 
-		 
+		   include_once "conex.php";
 		   $link=conectarse();
 		   //mysqli_query("SET NAMES 'utf8'");
-		   
 		   $ses_usu_id     = $_SESSION['ses_id'];
 		   $ses_usu_nombre = $_SESSION['ses_nombre'];
 		   $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
@@ -51,7 +46,7 @@ session_start();
 		   $ses_div_id	   = $_SESSION['ses_div_id'];
 		   $ses_nivel	   = $_SESSION['ses_nivel'];
 
-		   if ($ses_usu_id==""){
+		   if ($ses_usu_id=="") {
 		         ?> <script>location.href='index.php';</script> <?php
 		   }
     ?>
@@ -80,8 +75,10 @@ session_start();
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Tipos de Documento</h5>
-              <p align="right"><a href="man_tid_ag.php"><button type="button" title="Agregar Nuevo" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar</button></a> </p>
-
+              <p align="right"><a href="man_tid_ag.php">
+                <button type="button" title="Agregar Nuevo" class="btn btn-primary">
+                  <i class="bi bi-plus-circle"></i> Agregar</button>
+                </a> </p>
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
@@ -111,8 +108,14 @@ session_start();
                      
                     <td>
 					     
-					     <a href="man_tid_ed.php?id_tid=<?php echo $v_tid_id ?>"><button type="button" class="btn btn-success"><i class="bi bi-pencil"></i></button></a>
-						 <a href="man_tid_bo.php?id_tid=<?php echo $v_tid_id ?>"><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></a>
+					     <a href="man_tid_ed.php?id_tid=<?php echo $v_tid_id ?>">
+                <button type="button" class="btn btn-success">
+                  <i class="bi bi-pencil"></i>
+                </button></a>
+						 <a href="man_tid_bo.php?id_tid=<?php echo $v_tid_id ?>">
+              <button type="button" class="btn btn-danger">
+                <i class="bi bi-trash"></i>
+              </button></a>
 				    </td>
                   </tr>
 				  
@@ -135,8 +138,9 @@ session_start();
   <?php include_once "lib_footer.php"; ?>
   <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short">
+    </i></a>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>

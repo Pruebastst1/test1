@@ -1,5 +1,5 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -33,19 +33,13 @@ session_start();
         .monospace-font {
             font-family: 'Courier New', Courier, monospace;
         }
-  </style>
-  
-  
+  </style> 
 </head>
-
 <body>
-
   <?php
-		   include_once "conex.php"; 
-		 
+		   include_once "conex.php";
 		   $link=conectarse();
 		   //mysqli_query("SET NAMES 'utf8'");
-		   
 		   $ses_usu_id     = $_SESSION['ses_id'];
 		   $ses_usu_nombre = $_SESSION['ses_nombre'];
 		   $ses_usu_ape_p  = $_SESSION['ses_ape_p'];
@@ -54,16 +48,16 @@ session_start();
 		   $ses_div_id	   = $_SESSION['ses_div_id'];
 		   $ses_nivel	   = $_SESSION['ses_nivel'];
 
-		   if ($ses_usu_id==""){
+		   if ($ses_usu_id=="") {
 		         ?> <script>location.href='index.php';</script> <?php
 		   }
 		   
 		   $id_tid	= $_GET['id_tid'];
 		   $consulta="select * from gd_tiposdocto where tid_id = '$id_tid'";
 		   $res=mysqli_query($link,$consulta);
-		   while ($arr=mysqli_fetch_array($res)){
+		   while ($arr=mysqli_fetch_array($res)) {
 				 
-				$v_tid_id		= $arr['tid_id'];	
+				$v_tid_id		= $arr['tid_id'];
 				$v_tid_codigo	= $arr['tid_codigo'];
 				$v_tid_nombre	= $arr['tid_nombre'];
 				 
@@ -114,14 +108,18 @@ session_start();
 				<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Código</label>
                   <div class="col-sm-3">
-                    <input type="text" class="form-control" name="f_codigo"  value="<?php echo $v_tid_codigo ?>" maxlength="5" oninput="validarMayusculas(this)" required>
+                    <input type="text" class="form-control" name="f_codigo"
+                    value="<?php echo $v_tid_codigo ?>" maxlength="5"
+                    oninput="validarMayusculas(this)" required>
                   </div>
                 </div>
 				
 				<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Nombre</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="f_nombre"  value="<?php echo $v_tid_nombre ?>" oninput="validarMayusculas(this)" required>
+                    <input type="text" class="form-control" name="f_nombre"
+                    value="<?php echo $v_tid_nombre ?>"
+                    oninput="validarMayusculas(this)" required>
                   </div>
                 </div>
 				
@@ -152,8 +150,9 @@ session_start();
   <?php include_once "lib_footer.php"; ?>
   <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short">
+    </i></a>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
